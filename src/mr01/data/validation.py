@@ -49,7 +49,7 @@ def validate_ohlc(frame: pd.DataFrame, timeframe_minutes: int, minimum_observati
         missing_count += max(1, round(delta / expected)-1)
         if len(examples)<10: examples.append(str(current))
     irregular = int((diffs % expected != pd.Timedelta(0)).sum())
-    aligned = int(((good_ts.astype("int64") % expected.value) != 0).sum())
+    aligned = int((good_ts.dt.floor(f"{timeframe_minutes}min") != good_ts).sum())
     numeric = frame[["open","high","low","close"]].apply(pd.to_numeric, errors="coerce")
     vals = numeric.to_numpy(dtype=float)
     nonfinite = int((~np.isfinite(vals)).any(axis=1).sum())

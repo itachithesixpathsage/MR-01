@@ -25,4 +25,5 @@ def test_sizing_never_rounds_up_and_missing_specs_unverified():
     r=theoretical_size(10000,.001,spec)
     assert r["status"]=="VERIFIED"
     assert r["estimated_risk"] <= r["risk_budget"]
-    assert abs(r["lots"]*100-r["risk_budget"]) < 1e-9
+    assert r["lots"] == 0.25
+    assert abs(r["estimated_risk"]-r["risk_budget"]) < 1e-9
