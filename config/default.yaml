@@ -1,0 +1,9 @@
+instrument: EURUSD
+z_window: 50
+z_entry: 2.0
+z_exit: 0.25
+ema_period: 50
+ema_shift: 5
+atr_period: 14
+risk_fraction: 0.005
+sizing_atr_multiple: 2.0

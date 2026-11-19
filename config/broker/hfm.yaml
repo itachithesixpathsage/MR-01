@@ -1,0 +1,4 @@
+# Deliberately unpopulated: verified account-specific specifications are required.
+# Required keys: tick_size, tick_value (account currency per tick per lot),
+# contract_size, account_currency, minimum_lot, maximum_lot, lot_increment.
+status: UNVERIFIED
